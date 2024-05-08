@@ -35,6 +35,7 @@ console.log(countTrue([]))
 
 
 console.log("*EXO - 01 ***************************************************************")
+console.log("*RETURN FALSE ***********************************************************")
 
 /*
 In a board game, a piece may advance 1-6 tiles forward depending on the number rolled on a six-sided die. 
@@ -56,3 +57,81 @@ possibleBonus(1, 9) ➞ false
 possibleBonus(5, 3) ➞ false
 
 */
+let min = 1
+let max = 6
+let rollDice = Math.random() * (max - min) + min;
+let result = Math.round(rollDice)
+console.log(result)
+
+
+function possibleBonus(a, b) {
+    let tilesForwardA = a + result
+    let tilesForwardB = b + result
+    
+    if(tilesForwardA == tilesForwardB) {
+        console.log(tilesForwardA)
+        console.log(tilesForwardB)
+        return true
+
+    } else {
+        return false
+    }
+        
+}
+
+console.log(possibleBonus(3, 7))
+console.log(possibleBonus(1, 9))
+console.log(possibleBonus(5, 3))
+
+
+console.log("*EXO - 02 ***************************************************************")
+
+/*
+Create a function that will return an integer number corresponding to the amount of digits in the given integer num.
+
+Expected results
+num_of_digits(1000) ➞ 4
+
+num_of_digits(12) ➞ 2
+
+num_of_digits(1305981031) ➞ 10
+
+num_of_digits(0) ➞ 1
+
+********************************************
+let digits = 1305981031
+
+console.log(digits)
+console.log(typeof(digits))
+
+let text = digits.toString()
+console.log(typeof(text))
+
+let splitDigit = text.split('');
+console.log(splitDigit.length)
+splitDigit = parseInt(splitDigit.length)
+console.log(typeof(splitDigit))
+********************************************
+
+*/
+
+
+function num_of_digits(digits) {
+    let digits = ''
+    let digitsToString = digits.toString()
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
