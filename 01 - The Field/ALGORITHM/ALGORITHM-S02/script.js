@@ -169,7 +169,8 @@ console.log(arrayOfMultiples(17, 6))
 
 console.log("*EXO - 05 ***************************************************************")
 
-/*Create a function that takes in a number as a string n and returns the number 
+/*
+Create a function that takes in a number as a string n and returns the number 
 without trailing and leading zeros.
 
 Trailing Zeros are the zeros after a decimal point which don't affect the value 
@@ -189,4 +190,28 @@ removeLeadingTrailing("00402") ➞ "402"
 removeLeadingTrailing("03.1400") ➞ "3.14"
 removeLeadingTrailing("30") ➞ "30"
 */
+
+let numberString = "230.000"
+
+console.log(numberString)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
