@@ -91,47 +91,102 @@ Create a function that will return an integer number corresponding to the amount
 
 Expected results
 num_of_digits(1000) ➞ 4
-
 num_of_digits(12) ➞ 2
-
 num_of_digits(1305981031) ➞ 10
-
 num_of_digits(0) ➞ 1
-
-********************************************
-let digits = 1305981031
-
-console.log(digits)
-console.log(typeof(digits))
-
-let text = digits.toString()
-console.log(typeof(text))
-
-let splitDigit = text.split('');
-console.log(splitDigit.length)
-splitDigit = parseInt(splitDigit.length)
-console.log(typeof(splitDigit))
-********************************************
-
 */
 
 
-function num_of_digits(digits) {
-    let digits = ''
-    let digitsToString = digits.toString()
-    
+function num_of_digits(digits) { 
+    let text = digits.toString()
+    let splitDigit = text.split('')
+    splitDigit = parseInt(splitDigit.length)
+    return splitDigit
+}
+
+console.log(num_of_digits(1000))
+console.log(num_of_digits(12))
+console.log(num_of_digits(1305981031))
+console.log(num_of_digits(0))
+
+console.log("*EXO - 03 ***************************************************************")
+
+/*
+Write a function that converts an object into an array, 
+where each element represents a key-value pair in the form of an array.
+
+Notes
+Return an empty array if the object is empty.
+
+Expected results
+toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+
+toArray({ shrimp: 15, tots: 12 }) ➞ [["shrimp", 15], ["tots", 12]]
+
+toArray({}) ➞ []
+*/
+
+function toArray(arrayTemp) {
+    var result = Object.entries(arrayTemp)
+    return result
 }
 
 
+console.log(toArray({ a: 1, b: 2 }))
+console.log(toArray({ shrimp: 15, tots: 12 }))
+console.log(toArray({}))
+
+console.log("*EXO - 04 ***************************************************************")
+
+/*
+Create a function that takes two numbers as arguments (num, length) and returns an array
+of multiples of num until the array length reaches length.
+
+Notes
+Notice that num is also included in the returned array.
+
+Expected results
+arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
+*/
+
+function arrayOfMultiples(num, arrayLength) {
+
+    let arrayMulti = []
+    
+    for (let i = 1; i < arrayLength+1; i++) {
+        arrayMulti.push(num*i);
+    }
+    
+    return arrayMulti
+}
+
+console.log(arrayOfMultiples(7, 5))
+console.log(arrayOfMultiples(12, 10))
+console.log(arrayOfMultiples(17, 6))
 
 
+console.log("*EXO - 05 ***************************************************************")
 
+/*Create a function that takes in a number as a string n and returns the number 
+without trailing and leading zeros.
 
+Trailing Zeros are the zeros after a decimal point which don't affect the value 
+(e.g. the last three zeros in 3.4000 and 3.04000).
 
+Leading Zeros are the zeros before a whole number which don't affect the value 
+(e.g. the first three zeros in 000234 and 000230).
 
+Notes
+Return a string.
+If you get a number with .0 on the end, return the integer value (e.g. return "4" rather than "4.0").
+If the number is 0, 0.0, 000, 00.00, etc... return "0".
 
-
-
-
-
+Expected results
+removeLeadingTrailing("230.000") ➞ "230"
+removeLeadingTrailing("00402") ➞ "402"
+removeLeadingTrailing("03.1400") ➞ "3.14"
+removeLeadingTrailing("30") ➞ "30"
+*/
 
