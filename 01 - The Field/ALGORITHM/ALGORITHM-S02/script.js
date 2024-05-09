@@ -203,7 +203,7 @@ console.log(removeLeadingTrailing("30"))
 console.log(removeLeadingTrailing("0.0"))
 
 
-console.log("*EXO - 05 ***************************************************************")
+console.log("*EXO - 06 ***************************************************************")
 
 /*
 In this challenge you will be given an array similar to the following:
@@ -233,3 +233,64 @@ sortIt([[4], 1, [3]]) ➞ [1, [3], [4]]
 
 sortIt([[3], 4, [2], [5], 1, 6]) ➞ [1, [2], [3], 4, [5], 6]
 */
+
+function sortIt(arrTest) {
+    arrTest.sort()
+    return arrTest
+}
+
+console.log(sortIt([4, 1, 3]))
+console.log(sortIt([[4], [1], [3]]))
+console.log(sortIt([4, [1], 3]))
+console.log(sortIt([[4], 1, [3]]))
+console.log(sortIt([[3], 4, [2], [5], 1, 6]))
+
+console.log("*EXO - 07 ***************************************************************")
+
+/*
+Create a function that takes two numbers 
+and a mathematical operator + - / * and will perform a calculation with the given numbers.
+
+Notes
+If the input tries to divide by 0, return: "Can't divide by 0!"
+
+Expected results
+calculator(2, "+", 2) ➞ 4
+
+calculator(2, "*", 2) ➞ 4
+
+calculator(4, "/", 2) ➞ 2
+*/
+
+let operator =["+", "*", "/"]
+
+function calculator(a, operator, b) {
+    if(operator == "+") {
+        let result = a + b
+        return result
+    } else if(operator == "*") {
+        let result = a * b
+        return result
+    } else if(operator == "/") {
+        let result = a / b
+        return result
+    } else if (operator == "/" && 0 ) {
+        result = console.log("cant divide by 0")
+        return result
+    }
+     
+}
+
+console.log(calculator(2, "+", 2))
+console.log(calculator(2, "*", 2))
+console.log(calculator(4, "/", 2))
+console.log(calculator(4, "/", 0))
+
+
+
+
+
+
+
+
+
