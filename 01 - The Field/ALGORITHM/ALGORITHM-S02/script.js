@@ -300,8 +300,6 @@ The total world's landmass is 148,940,000 [Km^2]
 Round the result to two decimal places.
 */
 
-// console.log(`${country} is ${calcProportions.toFixed(2)}% of the total world's landmass`)
-
 function areaOfCountry(country, area) {
     let worldLandmass = 148940000 
     let calcProportions = ((area / worldLandmass) * 100).toFixed(2)
@@ -313,8 +311,28 @@ console.log(areaOfCountry("Russia", 17098242))
 console.log(areaOfCountry("USA", 9372610))
 console.log(areaOfCountry("Iran", 1648195))
 
+console.log("*EXO - 09 ***************************************************************")
 
+/*
+Given an input string, reverse the string word by word, the first word will be the last, and so on.
 
+Notes
+A word is defined as a sequence of non-space characters.
+The input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.
+You need to reduce multiple spaces between two words to a single space in the reversed string.
+Expected results
+reverseWords(" the sky is blue") ➞ "blue is sky the"
 
+reverseWords("hello   world!  ") ➞ "world! hello"
 
+reverseWords("a good example") ➞ "example good a"
+*/
 
+function reverseWords(word) {
+    word = word.trim().split(" ").reverse().join().replaceAll(",", " ").replace(/\s+/g, ' ')
+    return word
+}
+
+console.log(reverseWords(" the sky is blue"))
+console.log(reverseWords("hello   world!  "))
+console.log(reverseWords("a good example"))
