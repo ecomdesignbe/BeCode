@@ -32,6 +32,28 @@ FizzBuzz
 Fizz
 19
 Buzz
-
 */
 
+function fizzBuzz(num) {
+  for(let i = 1 ; i < num+1 ; i++) {
+    // si le reste de la division de a par b vaut 0, alors a est un multiple de b !
+    let multipleOfThree = i % 3 
+    let multipleOfFive = i % 5   
+
+    if(multipleOfThree == 0 && multipleOfFive == 0) {
+        console.log(i + " FizzBuzz")
+      }
+      else if(multipleOfThree == 0) {      
+        console.log("Fizz")
+      } 
+      else if(multipleOfFive == 0) {
+          console.log("Buzz") 
+      }
+      else {
+        console.log(i)
+      }   
+  }  
+  return num
+}
+
+console.log(fizzBuzz(20))
