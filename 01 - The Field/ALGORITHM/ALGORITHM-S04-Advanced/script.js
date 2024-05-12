@@ -92,6 +92,7 @@ Test your code with these text and others.
 let noteText = "this is a secret note to you from a secret admirer"
 let magazineText = "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"
 
+console.log("*To Do ***************************************************************")
 
 console.log("*EXO - 02 ***************************************************************")
 
@@ -116,11 +117,16 @@ isPalindrome("Madam, I'm Adam") ---> true
 */
 
 function isPalindrome (word) {
-  const reversedWord = word.split('').reverse().join('')
-  return word.toUpperCase() === reversedWord.toUpperCase()
+  let reversedWord = word.split('').reverse().join('').replace(/[^a-zA-Z]/g, "")
+  return word.toUpperCase().replace(/[^a-zA-Z]/g, "") === reversedWord.toUpperCase().replace(/[^a-zA-Z]/g, "")
 }
 
-console.log(isPalindrom('kayak')) // true
-console.log(isPalindrom('SOS')) // true
-console.log(isPalindrom('Kayak')) // true
-console.log(isPalindrom('Bonjour')) // false
+console.log(isPalindrome('kayak')) // true
+console.log(isPalindrome('SOS')) // true
+console.log(isPalindrome('Kayak')) // true
+console.log(isPalindrome('Bonjour')) // false
+console.log(isPalindrome("race car")) // true
+console.log(isPalindrome("hello world")) // false
+console.log(isPalindrome("Madam, I'm Adam")) // true
+
+
