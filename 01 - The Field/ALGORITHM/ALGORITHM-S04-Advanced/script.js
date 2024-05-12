@@ -117,7 +117,7 @@ isPalindrome("Madam, I'm Adam") ---> true
 */
 
 function isPalindrome (word) {
-  let reversedWord = word.split('').reverse().join('').replace(/[^a-zA-Z]/g, "")
+  let reversedWord = word.split('').reverse().join('')
   return word.toUpperCase().replace(/[^a-zA-Z]/g, "") === reversedWord.toUpperCase().replace(/[^a-zA-Z]/g, "")
 }
 
