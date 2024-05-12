@@ -1,4 +1,4 @@
-/**** ALGO S4 ****/
+/**** ALGO S4 - ADVANCED ****/
 
 console.log("*EXO - 00 ***************************************************************")
 
@@ -41,7 +41,7 @@ function fizzBuzz(num) {
     let multipleOfFive = i % 5   
 
     if(multipleOfThree == 0 && multipleOfFive == 0) {
-        console.log(i + " FizzBuzz")
+        console.log("FizzBuzz")
       }
       else if(multipleOfThree == 0) {      
         console.log("Fizz")
@@ -57,3 +57,70 @@ function fizzBuzz(num) {
 }
 
 console.log(fizzBuzz(20))
+
+
+console.log("*EXO - 01 ***************************************************************")
+
+/*
+Write a function called ransomNote which takes two parameters : noteText and magazineText.
+
+The goal is : with all the words of magazineText, you should be able to create the noteText.
+
+The function should return true if we are able to write the noteText with the words from magazineText or false if we can't.
+
+Notes
+Here are two examples :
+
+noteText = "this is a secret note to you from a secret admirer"
+
+magazineText = "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"
+
+In the case above, it would be false. Why ? Because all the words are present, but secret appears only once in the magazineText, but there are two secret in the noteText
+
+If the noteText was
+
+"this is a note to you from a secret admirer"
+That would work and would be true
+
+Test your code with these text and others.
+*/
+
+/* function ransomNote(noteText, magazineText) {
+
+}
+*/
+let noteText = "this is a secret note to you from a secret admirer"
+let magazineText = "puerto rico is a great place you must hike far from town to find a secret waterfall that i am an admirer of but note that it is not as hard as it seems this is my advice to you"
+
+
+console.log("*EXO - 02 ***************************************************************")
+
+/*
+
+A palindrome is any word or phrase that spells the same way both backward and forward.
+
+For example : race car is a palindrome. (don't take spaces, periods, dots, etc in consideration)
+
+Other examples : Madam, I'm Adam, radar, kayak, etc.
+
+You should create a function isPalindrome that takes a parameter text and returns a boolean indicating if the provided text is a palindrome or not.
+
+Notes
+You should be able to to ignore all special characters, spaces, dots, periods, etc. and be case insensitive
+Expected results
+isPalindrome("kayak") ---> true
+isPalindrome("race car") ---> true
+isPalindrome("hello world") ---> false
+isPalindrome("Madam, I'm Adam") ---> true
+
+*/
+
+function isPalindrome (word) {
+  const reversedWord = word.split('').reverse().join('')
+  return word.toUpperCase() === reversedWord.toUpperCase()
+}
+
+console.log(isPalindrom('kayak')) // true
+console.log(isPalindrom('SOS')) // true
+console.log(isPalindrom('Kayak')) // true
+console.log(isPalindrom('Bonjour')) // false
