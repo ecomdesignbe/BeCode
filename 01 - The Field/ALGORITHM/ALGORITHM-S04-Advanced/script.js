@@ -130,3 +130,102 @@ console.log(isPalindrome("hello world")) // false
 console.log(isPalindrome("Madam, I'm Adam")) // true
 
 
+console.log("*EXO - 03 ***************************************************************")
+
+/*
+
+Caesar Cipher is a way of "encrypting" a text that, supposably, Julius Caesar used in his communication.
+
+We switch every letter with, for example, two letters before in the alphabet.
+
+The Caesar cipher function will take two parameters str and num; 
+str represents the text we want to cipher and num de amount of letters you want to go forward or backward (using negative numbers)
+
+Notes
+Make it case incensitive
+You should be able to loop back or forward into de the alphabet (if you have to go 3 from z, it would be c)
+Expected results
+caesarCipher("zoo keeper", 2) ----> "bqq mggrgt"
+
+caesarCipher("bqq mggrgt", -2) ----> "zoo keeper"
+
+caesarCipher("My name is Henrique", 3) ----> "pb qdph lv khqultxh "
+
+*/
+
+console.log("*To Do ***************************************************************")
+
+console.log("*EXO - 04 ***************************************************************")
+
+/*
+
+Create a function that takes a string parameter and return another string with all the words inversed.
+
+Notes
+Attention !
+
+The order of the words doesn't change, just the letters of each word
+Expected results
+"This is a string of words" ----> "siht si a gnirts fo sdrow"
+
+*/
+
+function reversedWord(phrase) {
+  let reverseArrayPhrase = phrase.split(" ").map(word => word.split("").reverse().join(""))
+  return reverseArrayPhrase.join(" ").toLowerCase()
+}
+
+console.log(reversedWord("This is a string of words"))
+
+
+console.log("*EXO - 05 ***************************************************************")
+
+/*
+
+Create a function that takes an array and reverses it.
+
+Notes
+Don't use reverse()
+Don't create a new array and push elements to it.
+
+*/
+
+
+
+console.log("*EXO - 06 ***************************************************************")
+
+/*
+
+Write a function that takes as argument an array of numbers numArray and the sum we want to obtain.
+
+Your function should return every pair of numbers from numArray that adds up to the 'sum'
+
+Notes
+The result should be an array of arrays.
+Any number in the array can be used in multiple pairs (look at the "4" in the exemple below)
+Expected results
+// For "sum" = 7
+[1, 6, 4, 5, 3, 3] ---> [[6,1], [3,4], [3,4]]
+
+
+*/
+
+console.log("*EXO - 07 ***************************************************************")
+
+/*
+
+Fibonacci sequence starts with 1 and 1 and the next numbers are always the sum of the last two numbers. So... Here is the sequence :
+
+1 1 2 3 5 8 13 21 34 ...
+
+Write a function that takes a num number and returns an array with the num first elements of the Fibonacci sequence.
+
+Notes
+Recursion would be the best way to solve it but there is another simple way.
+Expected results
+fibonacci(4) ----> [1, 1, 2, 3]
+fibonacci(9) ----> [1, 1, 2, 3, 5, 8, 13, 21, 34]
+fibonacci(6) ----> [1, 1, 2, 3, 5, 8]
+
+
+*/
