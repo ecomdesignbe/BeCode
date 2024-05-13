@@ -1,0 +1,40 @@
+body {
+    background-color: hsl(39, 6%, 83%);
+}
+
+h1.brand {
+    color : rgb(12, 37, 134);
+}
+
+h1.brand span {
+    color: #d69e36 ;
+}
+
+ul.menu li a {
+    color :rgb(134, 12, 110) ;
+}
+
+ul.menu li span {
+    color: red;
+}
+
+ul.menu div {
+    background-color: hsl(39, 21%, 73%);
+}
+
+ul.menu div a:link{
+    color: blue;
+}
+
+ul.menu div span {
+    color: rgb(14, 86, 96);
+}
+
+ul.menu ul li:nth-last-of-type(2) {
+    background: purple;
+}
+
+.content p,a{
+    color: darkcyan;
+}
+
