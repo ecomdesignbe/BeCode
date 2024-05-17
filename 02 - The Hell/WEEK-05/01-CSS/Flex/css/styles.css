@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Noto+Sans+Symbols:wght@100..900&display=swap');
+
+/***************************************************************/
+/* RESET
+/***************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #2D4480;
+    font-family: "Noto Sans Symbols", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/***************************************************************/
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/***************************************************************/
+
+.card {
+    background-color: white;
+    width: 288px;
+    border-radius: 27px;
+    padding: 35px 50px;
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.6);   
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 28px;
+}
+
+.content {
+    margin-bottom: 27px;
+}
+
+.content ul {}
+.content li {
+    display: flex;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content img {
+    margin-right: 23px;
+    width: 20px;
+    height: 20px;
+}
+
+.line {
+    background-color: black;
+    height: 1px;
+    margin-bottom: 8px;
+}
+
+.free {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.forever {
+    font-size: 36px;
+    font-family: "Allan", Verdana, Geneva, Tahoma, sans-serif;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 36px;
+}
+
+.button {
+    background-color: #FFBC0F;
+    border-radius: 27px;
+    padding: 25px 45px;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+
+}
+
+.button a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #253868;
+    text-transform: uppercase;   
+}
