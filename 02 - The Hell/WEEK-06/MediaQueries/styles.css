@@ -1,0 +1,150 @@
+
+/***************************************************************/
+/* RESET
+/***************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/***************************************************************/
+/* MEDIAQUERIES
+/***************************************************************/
+@media (min-width:320px)  { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    body {
+        background-color: gold;
+    }
+    .a {
+        visibility: visible;
+    }
+    .b {
+        visibility: hidden;
+    }
+    .c {
+        visibility: hidden;
+    }
+    .d {
+        visibility: hidden;
+    }
+    .e {
+        visibility: hidden;
+    }
+}
+
+@media (min-width:480px)  { 
+    /* smartphones, Android phones, landscape iPhone */ 
+    .a {
+        visibility: visible;
+    }
+    .b {
+        visibility: hidden;
+    }
+    .c {
+        visibility: hidden;
+    }
+    .d {
+        visibility: hidden;
+    }
+    .e {
+        visibility: hidden;
+    }
+}
+
+@media (min-width:600px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    .a {
+        visibility: hidden;
+    }
+    .b {
+        visibility: visible;
+    }
+    .c {
+        visibility: visible;
+    }
+    .d {
+        visibility: visible;
+    }
+    .e {
+        visibility: visible;
+    }
+}
+
+@media (min-width:801px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .a {
+        visibility: hidden;
+    }
+    .b {
+        visibility: visible;
+    }
+    .c {
+        visibility: visible;
+    }
+    .d {
+        visibility: visible;
+    }
+    .e {
+        visibility: visible;
+    }
+}
+
+@media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    .a {
+        visibility: hidden;
+    }
+    .b {
+        visibility: visible;
+    }
+    .c {
+        visibility: visible;
+    }
+    .d {
+        visibility: visible;
+    }
+    .e {
+        visibility: visible;
+    }
+}
+
+@media (min-width:1281px) { 
+    /* hi-res laptops and desktops */
+    body {
+        background-color: cornflowerblue;
+    }
+    .a {
+        visibility: hidden;
+    }
+    .b {
+        visibility: hidden;
+    }
+    .c {
+        visibility: hidden;
+    }
+    .d {
+        visibility: hidden;
+    }
+    .e {
+        visibility: visible;
+    }
+}
