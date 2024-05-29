@@ -1,0 +1,49 @@
+.footer {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include ipadPro {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .article {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 24px;
+      margin-bottom: 34px;
+
+      @include ipadPro {
+        margin-bottom: 0;
+      }
+
+      &-img {
+        height: 100%;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      span {
+        color: $grey-light;
+        font-size: 32px;
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+
+      h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 26px;
+        color: $grey-dark;
+      }
+    }
+  }
+}

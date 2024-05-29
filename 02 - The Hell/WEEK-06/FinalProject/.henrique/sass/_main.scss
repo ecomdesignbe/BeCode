@@ -1,0 +1,125 @@
+.main {
+  margin-bottom: 50px;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "img" "title" "content" "side";
+
+    @include ipad {
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "img img side"
+        "title content side";
+    }
+  }
+
+  .main-img {
+    grid-area: img;
+    margin-bottom: 24px;
+
+    img {
+      aspect-ratio: 1.14;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      @include ipad {
+        aspect-ratio: unset;
+      }
+    }
+
+    @include ipad {
+      margin-bottom: 0;
+    }
+  }
+
+  .side {
+    padding: 32px 24px;
+    grid-area: side;
+    background-color: $black;
+
+    h2 {
+      color: $yellow;
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 34px;
+    }
+
+    li {
+      padding: 30px 0;
+      h3 {
+        color: $white;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: $grey-light;
+        font-size: 15px;
+        line-height: 26px;
+      }
+
+      position: relative;
+      &::after {
+        @include pseudo;
+        width: 100%;
+        height: 1px;
+        background-color: $grey-light;
+        bottom: 0;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .title {
+    grid-area: title;
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+
+      @include ipad {
+        font-size: 56px;
+      }
+    }
+    margin-bottom: 24px;
+    @include ipad {
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    grid-area: content;
+    margin-bottom: 64px;
+    @include ipad {
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 15px;
+      line-height: 26px;
+      color: $grey-dark;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: $red;
+      color: $white;
+      padding: 13px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 4.38px;
+      display: inline-block;
+      @include transition;
+
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}
