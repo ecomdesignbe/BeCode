@@ -16,8 +16,8 @@ if (li.className === "highlight") {
 
 let li = document.querySelectorAll('li')
 
-li.forEach(element => {
-    console.log(li)
+li.forEach(li => {
+  li.classList.remove('highlight') 
 });
 
 
