@@ -14,15 +14,20 @@ rgb color is given by three numbers between 0 and 255. For example : rgb(26, 254
 */
 
 let buttonBg = document.querySelector('button')
-let red = parseInt(Math.random() * 255)
-let green = parseInt(Math.random() * 255)
-let blue = parseInt(Math.random() * 255)
-
 let rgbHone = document.querySelector('h1')
 
-buttonBg.addEventListener('click', function() {
-    document.body.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')'
-    rgbHone.innerHTML = 'rgb(' + red + ',' + green + ',' + blue + ')'
+
+buttonBg.addEventListener('click', () => {
+    
+    let red = parseInt(Math.random() * 255)
+    let green = parseInt(Math.random() * 255)
+    let blue = parseInt(Math.random() * 255)
+    let randomColor = 'rgb(' + red + ',' + green + ',' + blue + ')'
+    
+    document.body.style.backgroundColor = randomColor
+    rgbHone.textContent = randomColor
 }) 
+
+
 
 
