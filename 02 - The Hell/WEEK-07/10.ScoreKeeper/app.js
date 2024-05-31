@@ -17,27 +17,86 @@ Then, you can click on a button reset to start all over again.
 
 */
 
-let scorePlayerOne = document.querySelector('#scorePlayerOne').innerHTML = '5'
+/* Score */
+let scorePlayerOne = 0
+let scorePlayerTwo = 0
+let gameOver = false
 
-let scorePlayerTwo = document.querySelector('#scorePlayerTwo').innerHTML = '3'
+/* Board */
+let boardScorePlayerOne = document.querySelector('#boardScorePlayerOne')
+let boardScorePlayerTwo = document.querySelector('#boardScorePlayerTwo')
+
+/* Btn */
+let btnPlayerOne = document.querySelector('#buttonP1')
+let btnPlayerTwo = document.querySelector('#buttonP2')
+let btnReset = document.querySelector('#reset')
 
 
-
-function addOne() {
-    let i = 0
-    while(i < 5 ) {
-        i++
-        console.log(i)
+/* Event */
+btnPlayerOne.addEventListener('click', ()=> {
+  if(!gameOver) {
+    scorePlayerOne++
+    console.log(scorePlayerOne)
+    boardScorePlayerOne.innerHTML = scorePlayerOne
+  
+    if(scorePlayerOne === 5) {    
+      alert('you Win')
+      document.getElementById('boardScorePlayerOne').style.color = "green" 
+      gameOver = true
     }
-    return
-}
 
-console.log(addOne())
+        
+    if (scorePlayerOne > scorePlayerTwo) {
+      document.getElementById('boardScorePlayerOne').style.color = "green" 
+      document.getElementById('boardScorePlayerTwo').style.color = "red" 
+    } else if (scorePlayerOne < scorePlayerTwo) {
+      document.getElementById('boardScorePlayerOne').style.color = "red" 
+      document.getElementById('boardScorePlayerTwo').style.color = "green" 
+    }
+    
+    else {
+      document.getElementById('boardScorePlayerOne').style.color = "yellow" 
+      document.getElementById('boardScorePlayerTwo').style.color = "yellow" 
+    }
+
+  }
+})
+
+btnPlayerTwo.addEventListener('click', ()=> {
+  if(!gameOver) {
+    scorePlayerTwo++
+    console.log(scorePlayerTwo)
+    boardScorePlayerTwo.innerHTML = scorePlayerTwo
+      
+    if(scorePlayerTwo === 5) {    
+        alert('you Win')
+        document.getElementById('boardScorePlayerTwo').style.color = "green" 
+        gameOver = true 
+    }
+
+        
+    if (scorePlayerOne > scorePlayerTwo) {
+      document.getElementById('boardScorePlayerOne').style.color = "green" 
+      document.getElementById('boardScorePlayerTwo').style.color = "red" 
+    } else if (scorePlayerOne < scorePlayerTwo) {
+      document.getElementById('boardScorePlayerOne').style.color = "red" 
+      document.getElementById('boardScorePlayerTwo').style.color = "green" 
+    }
+    else {
+      document.getElementById('boardScorePlayerOne').style.color = "yellow" 
+      document.getElementById('boardScorePlayerTwo').style.color = "yellow" 
+    }
+  }
+})
 
 
 
-
-
-
-
-
+btnReset.addEventListener('click', () => {
+  scorePlayerOne = 0
+  scorePlayerTwo = 0
+  boardScorePlayerOne.innerHTML = scorePlayerOne
+  boardScorePlayerTwo.innerHTML = scorePlayerTwo
+  gameOver = false 
+  document.getElementById('boardScorePlayerOne').style.color = "purple"  
+  document.getElementById('boardScorePlayerTwo').style.color = "purple"  
+})

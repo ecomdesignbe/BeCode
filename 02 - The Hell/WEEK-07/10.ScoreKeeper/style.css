@@ -1,0 +1,32 @@
+.page { 
+    text-align: center; 
+    background-color: darkgrey; 
+    color: purple;
+    font-size: 20px;
+}
+
+.red { 
+    color: red; 
+}
+
+.green { 
+    color: green; 
+}
+
+button { 
+    border-radius: 15px; 
+    border-color: blueviolet; 
+    background-color: purple; 
+    color: white; 
+    margin-left: 20px;
+    padding: 5px;
+}
+
+div { 
+    display: block; 
+    margin-bottom: 20px; 
+}
+
+span { 
+    font-size: 45px;
+}
