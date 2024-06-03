@@ -33,14 +33,6 @@ In your js, think about using the delegation strategy we talked about. (an event
 
 Don't worry about optimization for now. Do it with a bunch of if/else in the beggining and then try to refactor it later.
 
-form.addEventListener("click", (event) => {
-  event.preventDefault(); // Prevents the page to submit the form (and therefore refresh the page)
-
-  // Run some code then...
-*/
-
-
-
 form.addEventListener("change", (event) => {
   event.preventDefault(); 
   let baliseNom = document.getElementById("nom")
@@ -48,48 +40,70 @@ form.addEventListener("change", (event) => {
   console.log(nom); // affiche ce qui est contenu dans la balise name
 })
 
-/* 
+*/
 
 const form = document.querySelector("form");
-
-let username = document.getElementById("username")
-let usernameMsg = document.querySelector('p')
-
-if(username === '') {
-  usernameMsg.style.color = 'red'
-  usernameMsg.innerHTML = 'username are empty'
-}
-else {
-  console.log(username.value)
-  usernameMsg.style.color = 'green'
-  usernameMsg.innerHTML = 'good'
-}
 
 
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // evite le rechargement de la page
 
-  let username = document.querySelector('#username').value
+  let lowercaseOnly  = /^[a-z]+$/g
+  let validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g 
 
-  let email = document.querySelector('#email').value
-  let password = document.querySelector('#password').value
-  let retypePassword = document.querySelector('#retypePassword').value
+  let username = document.getElementById("username")
+  let usernameMsg = document.getElementById('usernameMsg')
   
-   let usernameMsg = document.querySelector('p')
-  let emailMsg = document.querySelector('p')
-  let passwordMsg = document.querySelector('p')
-  let retypePasswordMsg = document.querySelector('p')
+  if(username.value === '' || // not empty
+    !lowercaseOnly.test(username.value) || // must be only lowercase
+    username.value.length < 5 || username.value.length > 10) { //most 10 characters
+      usernameMsg.classList = "error"
+      usernameMsg.innerHTML = 'Must be only lowercase and at least 5 characters and at most 10 characters.'
+    } else {
+      usernameMsg.classList = "success"
+      usernameMsg.innerHTML = 'Passed'
+      console.log(username.value)
+    }
   
+  let email = document.getElementById("email")
+  let emailMsg = document.getElementById('emailMsg')
+  
+  if(email.value === '' || // not empty
+    !validEmail.test(email.value)) { // valid email 
+      emailMsg.classList = "error"
+      emailMsg.innerHTML = 'Email should be a valid email adress'
+    } else {
+      emailMsg.classList = "success"
+      emailMsg.innerHTML = 'Passed'
+      console.log(email.value)
+    }
 
-  if(username === '') {
-    usernameMsg.style.color = 'red'
-    usernameMsg.innerHTML = 'username are empty'
-  }
-  else {
-    usernameMsg.style.color = 'green'
-    usernameMsg.innerHTML = 'good'
-  }
+      
+  let password = document.getElementById("password")
+  let passwordMsg = document.getElementById('passwordMsg')
   
+  if(password.value === '' || // not empty
+    password.value.length < 8 || password.value.length > 15) { //most 15 characters
+      passwordMsg.classList = "error"
+      passwordMsg.innerHTML = 'Must be at least 8 characters and at most 15 characters.'
+    } else {
+      passwordMsg.classList = "success"
+      passwordMsg.innerHTML = 'Passed'
+      console.log(password.value)
+    }
 
+    let retypePassword = document.getElementById("retypePassword")
+    let retypePasswordMsg = document.getElementById('retypePasswordMsg')
+
+    if(retypePassword.value === '' || // not empty
+    !retypePassword.value === password.value) { 
+      retypePasswordMsg.classList = "error"
+      retypePasswordMsg.innerHTML = 'Password confirmation should be the same as password'
+    } else {
+      retypePasswordMsg.classList = "success"
+      retypePasswordMsg.innerHTML = 'Passed'
+      console.log(retypePassword.value)
+    } 
 });
-*/
+
+
