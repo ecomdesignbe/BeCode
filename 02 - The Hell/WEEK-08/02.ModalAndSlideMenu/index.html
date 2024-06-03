@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal and Slide Menu</title>
+    <script type="text/javascript" src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!-- https://www.w3schools.com/howto/howto_css_modals.asp -->
+    <h1>Modal and Slide Menu</h1>
+    
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+
+    <!-- https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0 -->
+    <ul class="menu">
+        <li><a class="menuItem" href="#">menuItem 1</a></li>
+        <li><a class="menuItem" href="#">menuItem 2</a></li>
+        <li><a class="menuItem" href="#">menuItem 3</a></li>
+        <li><a class="menuItem" href="#">menuItem 4</a></li>
+      </ul>
+      <button class="hamburger">
+        <!-- material icons https://material.io/resources/icons/ -->
+        <i class="menuIcon material-icons">menu</i>
+        <i class="closeIcon material-icons">close</i>
+      </button>
+</body>
+</html>
