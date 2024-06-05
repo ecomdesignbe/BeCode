@@ -1,0 +1,94 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+body {
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+section {
+    height: 200vh;
+}
+
+section:first-of-type + section {
+    height: 100vh;
+}
+
+
+#one {
+    background-color: darkcyan;
+}
+
+#two {
+    background-color: darkgoldenrod;
+}
+
+/* ---------------------Navigation 
+
+nav {
+    background-color: rgba(48, 48, 48, 0.726);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+nav h1 {
+    padding: 1rem;
+    color: rgb(34, 229, 255);
+}
+
+.nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 1rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: rgb(240, 240, 240);
+    transition: all 250ms ease;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: rgb(34, 229, 255);
+    color: rgb(54, 54, 54);
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section:first-of-type + section {
+    height: 100vh;
+}
+
+#one {
+    background-color: darkcyan;
+}
+
+#two {
+    background-color: darkgoldenrod;
+}
+
+#three {
+    background-color: darkblue;
+}
+*/

@@ -1,0 +1,35 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+.cyan { background-color: cyan; }
+.magenta {background-color: magenta }
+.yellow { background-color: yellow; }
+.purple { background-color: purple; }
+
+body {
+    background-color: #000 ;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 45px;;
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+div {
+    padding: 25px;
+}
+
+section {    
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgrey;
+    max-height: 100vh;
+    max-width: 100vh;
+}

@@ -1,0 +1,36 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+body {
+    overflow: hidden;
+}
+
+section {
+    height: 300px;
+  }
+.swiper-container{
+    height: 100vh;
+}
+
+.swiper-slide {
+    background: lightgray;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    content: ""!important;
+}
+
+/*
+.swiper-button-prev {
+    background-image: url("../img/prev.png")!important;
+    
+}
+
+.swiper-button-next {
+    background-image: url("../img/next.png")!important;
+}
+/*
