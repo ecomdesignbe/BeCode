@@ -1,0 +1,95 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    background-color: #0C1015;
+    color: #fff;
+    width: 1440px;
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.swiper {     
+    width: 534px;
+    margin-right: 50px;
+    opacity: 0.4;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 34px;
+}
+
+.swiper-slide {}
+
+.content {
+    width: 532px;
+    background-color: #24292F;
+    padding: 50px;
+}
+
+.content h1{
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.content h2{
+    font-size: 18px;
+    color: #C92B2B;
+    margin-bottom: 26px;    
+}
+.content p{
+    font-size: 14px;
+    line-height: 200%;
+}
+
+.swiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+/*
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    color: #C92B2B;
+}
+
+section {}
+
+.flex-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 534px;
+    border: solid 1px white;
+}
+
+.swiper-wrapper {}
+.swiper-slide { display: flex;}
+
+.content {
+    background-color: #24292F;
+    font-size: 14px;
+    line-height: 200%;
+    width: 532px;
+    text-align: left;
+    padding: 50px;
+}
+*/
