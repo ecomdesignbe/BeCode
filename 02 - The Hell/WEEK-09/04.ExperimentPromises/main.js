@@ -68,8 +68,11 @@ const calcul = (num1, num2) => {
 
 /* UTILISATION */
 
-calcul(300,900).then((result) => {
-    console.log('Resultat:' + result)
-}).catch((err) => {
-    console.log('Error ' + err)
-})
+calcul(300,900)
+    .then((result) => {
+        console.log('Resultat:' + result)
+    })
+
+    .catch((err) => {
+        console.log('Error ' + err)
+    })
