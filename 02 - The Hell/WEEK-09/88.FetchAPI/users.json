@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Steve",
+        "email": "steve@ecomdesign.be"
+    },
+    {
+        "id": 2,
+        "name": "Nathanael",
+        "email": "nathanael@nathanael.be"
+    },
+    {
+        "id": 3,
+        "name": "Henrique",
+        "email": "henrique@henrique.be"
+    }
+]

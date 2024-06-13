@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.page {
+    margin-top: 25px;
+}
+
+h1 {
+    font-family: 'Tiny5', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.searchResult {
+    text-align: left;
+    margin-left: 50px;
+}
+
+input , button{
+    padding:5px;
+    border-radius: 5px;    
+    background-color: dimgray;
+    color: white;
+}
+::placeholder {
+    color: white;
+    padding: 10px;
+}
+
+.output {
+    background-color: dimgray;
+    padding: 25px;
+    width: 650px;
+    display: grid;
+    margin: 50px auto;
+    grid-template-columns: 3;
+    align-content: center;
+    justify-items: center;
+    border-radius: 5px;
+    color: white;
+    text-align: left;
+}
