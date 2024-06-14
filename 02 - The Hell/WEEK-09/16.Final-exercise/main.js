@@ -1,66 +1,82 @@
-/*
-We will now do an exercise to practice API calls and DOM manipulation.
+document.getElementById("button").addEventListener('click', () => {
+    let inputValue = document.getElementById("inputName").value
+    let details = document.getElementById("details")
+    details.innerHTML = ""
 
-The mission
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`)
+        .then(response => response.json())
 
-Using this api, create a little program as follow :
-
-There is a text input where you should be able to type something related to food, a meal, etc.
-
-When you press ENTER, you should fetch all meals related to the search field.
-
-You should then display in a grid the image of each meal and its title.
-
-A little text should also say : these are the results for "chicken", for example
-
-When you click on a meal, you should open a modal with the following meal information :
-
-Image cover
-Title
-List of ingredients and how much of them you will need
-A description on how to cook it.
-You should be able to close the modal and search for another meal as many times you want.
-
-Make it pretty ! Think of containers, menu, harmonic colors, etc.
-
-Good luck, my friends ! ;)
-*/
-/*
-
-const mealForm = document.getElementById('mealForm')
-const submitBtn = document.getElementById('submitBtn')
-const searchResult = document.getElementById('searchResult')
-
-mealForm.addEventListener('submit', searchMeal)
-
-async function searchMeal(e) {
-    e.preventDefault()
-    const meal = mealForm.elements[0].value
-    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
-    
-    const jsonData = await data.json()
-    console.log(jsonData)
-    searchResult.innerHTML = `${JSON.stringify(jsonData, null, 4)}`
-}
-*/
-document.getElementById('getMeal').addEventListener('click', getMeal)
-
-function getMeal() {
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata')
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-            let output = '<h2>Meals</h2>'
+        .then(data => {
+            const items = document.getElementById("items")
             
-            data.forEach(function(meals) {
-                output += `
-                    <div>
-                        <h3>${meals.idMeal}</h3>
-                        <p>${meals.strCategory}</p>
+            items.innerHTML = ""
+            
+            if(data.meals === null){
+                document.getElementById("msg").style.display = "block"
+            } else {
+                document.getElementById("msgSearch").innerHTML = `<h2>These are the results for all ${inputValue}</h2>`
+                
+                data.meals.forEach(meal => {
+                    itemDiv = document.createElement("div")
+                    itemDiv.className = "m-2 singleItem"
+                    itemDiv.setAttribute('onclick' , `details('${meal.idMeal}')`)
+
+                    
+
+                    const itemInfo = `
+                    <div class="card" style="width: 18rem;"  data-bs-toggle="modal" data-bs-target="#myModal">
+                        <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" title="${meal.strMeal}">
+                        <div class="card-body">
+                            <h3 class="card-text text-center">${meal.strMeal}</h3>
+                        </div>                          
                     </div>
-                `
-            });
+                    `
+                    itemDiv.innerHTML = itemInfo
+                    items.appendChild(itemDiv)
+                });
+            }
+    })
+})
+
+function details(id){
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+        .then(response => response.json())
+        .then(detail => {
             
-            document.getElementById('output').innerHTML = output
+            let meal = detail.meals[0] 
+
+            let details = document.getElementById("details")
+            details.innerHTML = ""
+            let detailsDiv = document.createElement("div")
+            let detailsInfo = `
+                    <div class="card">
+                        <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" title="${meal.strMeal}" >
+                        <div class="card-body">
+                            <h4 class="card-text text-center">${meal.strMeal}</h4>
+                            <h5>Ingredients</h5>
+                            <ul>
+                            ${ingredients(meal)}
+                            </ul>
+                            <p>${meal.strInstructions}</p>
+                        </div>
+                    </div>
+                    `
+            detailsDiv.innerHTML = detailsInfo
+            details.appendChild(detailsDiv) 
         })
+}
+
+function ingredients(meal) {
+    let ingredientsList = ''
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`]
+        const measure = meal[`strMeasure${i}`]
+        if (!ingredient) {
+            break;
+        };
+        if (ingredient.trim() !== '') {
+            ingredientsList += `<li>${ingredient} - ${measure}</li>`
+        }
+    }
+    return ingredientsList
 }
