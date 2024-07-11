@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index </title>
+</head>
+<body>
+    <p>Here is the list of members :</p>
+<hr />
+<% data.forEach((member)=>{ %>
+<h3><%= member.firstName + ' ' + member.lastName %></h3>
+<hr />
+<% }) %>
+<a href="/add">Add member</a>
+</body>
+</html>
