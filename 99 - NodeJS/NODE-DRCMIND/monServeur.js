@@ -1,11 +1,12 @@
 const http = require('http')
-
 const fs = require('fs')
+const uuid = require('uuid')
 
 const serveur = http.createServer((requete, reponse) => {
-    console.log('Serveur crée')
-    console.log(requete.method)
-    console.log(requete.url)
+    // console.log('Requete effectuee avec succes !')
+    // console.log(requete.method)
+    // console.log(requete.url)
+    console.log(uuid.v4())
 
     // définition de l'entete
     reponse.setHeader('content-type', 'text/html')
