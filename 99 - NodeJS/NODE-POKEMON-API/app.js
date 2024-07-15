@@ -1,11 +1,13 @@
 // https://www.youtube.com/watch?v=NRxzvpdduvQ&ab_channel=SimonDieny-CodeSenior
-// on recupere le module express
+// on initialise les modules
 const express = require('express') 
 const morgan = require('morgan')
 const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
+const { Sequelize, DataTypes } = require('sequelize') 
 const { success, getUniqueId } = require('./helper.js') // destructuration
 let pokemons = require('./mock-pokemon')
+const PokemonModel = require('./src/models/pokemon')
 
 // on cree une instance express = serveur web
 const app = express()
@@ -13,7 +15,61 @@ const app = express()
 // port
 const port = 3000 
 
+/**********************************************************************************************************/
+
+// Configuration DB
+const sequelize = new Sequelize (
+    'pokedex', // nom de db
+    'root', // usr 
+    '', // mdp
+    {
+        host: 'localhost', 
+        dialect: 'mariadb',
+        dialectOptions: {
+            timezone : 'Etc/GMT-2'
+        },
+        logging: false,
+        port: 3307 // préciser le port avec wamp sinon c'est 3306 = mySQL
+    }
+)
+
+// Authentification DB
+sequelize.authenticate()
+    .then(_ => console.log(`la connexion à la base de donnée a bien été établie`))
+    .catch(error => console.error(`impossible de se connecter à la base de données ${error}`))
+
+const Pokemon = PokemonModel(sequelize, DataTypes)
+
+sequelize.sync({force: true})
+    .then(_ => {
+        console.log('La base de donnée "Pokedex" a bien été synchronisée')
+
+        pokemons.map(pokemon => {
+            Pokemon.create({
+                name : pokemon.name,
+                hp: pokemon.hp,
+                cp: pokemon.cp,
+                picture: pokemon.picture,
+                types: pokemon.types.join()
+            }).then(bulbizzare => console.log(bulbizzare.toJSON()))
+        })
+
+        // ajout d'un pokemon dans la db
+        /*
+        Pokemon.create({
+            name : 'Bulbizzare',
+            hp: 25,
+            cp: 5,
+            picture: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',
+            types: ["Plante", "Poisson"].join()
+        }).then(bulbizzare => console.log(bulbizzare.toJSON()))
+        */
+    })
+
+/**********************************************************************************************************/
+
 // création middleware Express
+
 /* app.use((req, res, next) => {
     console.log(`URL : ${req.url}`)
     next()
@@ -84,5 +140,6 @@ app.delete('/api/pokemons/:id', (req, res) => {
     res.json(success(message, pokemonDeleted))
 })
 
+/**********************************************************************************************************/
 //on démarre le serveur
 app.listen(port, () => console.log(`Notre application Node est démarée sur http://localhost:${port}`))
