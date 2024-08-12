@@ -3,8 +3,6 @@
 
  ---
 
-https://dev.ecomdesign.be/render-JobApplyTracker/views/login.html
-
 In this challenge, you'll be lead to implement :
 
 - Frontend with html (ejs?), css(Sass) and js
