@@ -10,9 +10,51 @@ const todos = [
   'Créer des composants'
 ]
 
+/* HOOK USE STATE */
 
+function App () {
+  const [person, setPerson] = useState ({
+    firstName : 'John',
+    lastName : 'Doe',
+    age : 18
+  })
+
+  const [count, setCount] = useState(0)
+
+  const incrementAge = () => {
+    setPerson({...person, age : person.age})
+  }
+  
+  const incrementCount = () => {
+    setCount(count +1)
+  }
+
+  return <>
+    <p>Age de {person.firstName} : {person.age} </p>
+    <button onClick={incrementAge}>Gagner une année</button><br></br><br></br>
+    <button onClick={incrementCount}>Incrémenter {count}</button>
+  </>
+
+  /* PORTEE DES VARIABLES
+  const [count, setCount] = useState(0)
+
+  console.log('render')
+
+  const increment = () => {
+    // setCount(count + 1) 
+    setCount((c) => c + 1) 
+  }
+
+  return <>
+    <p>Compteur : {count} </p>
+    <button onClick={increment}>Incrémenter</button>
+  </>
+}
+*/
+
+
+/* SYNTAXE JSX
 function App() {
-
   return <>
     {showTitle ? 
       <h1 id='title' className='title' style={style}>{title}</h1> :
@@ -42,5 +84,6 @@ function Title ({color, hidden, ...props}) {
 
   return <h1 style={{color: color}} {...props} /> 
 }
-
+*/
+}
 export default App
